@@ -37,6 +37,7 @@
       if (!label || !shortLabelByFullLabel[fullLabel]) return;
       button.dataset.fullLabel = fullLabel;
       button.title = fullLabel;
+      button.setAttribute('aria-label', fullLabel);
       const targetLabel = collapsed ? shortLabelByFullLabel[fullLabel] : fullLabel;
       if (label.textContent !== targetLabel) label.textContent = targetLabel;
     });
