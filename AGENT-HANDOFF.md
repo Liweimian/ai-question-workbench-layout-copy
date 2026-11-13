@@ -9,6 +9,7 @@
 
 ## Implementation boundary
 
+- Base files now exactly mirror the user-provided live `new-scheme-two/?v=749ddc7@` page: `index-DM2c5YM-.js`, `index-Bf_IkZE1.css`, and its `motion/` assets. Do not substitute `new-scheme-two-modes` or the newer cached `gh-pages` bundle.
 - Original compiled assets remain untouched.
 - `layout-polish.css` contains all visual overrides.
 - `layout-polish.js` only adds the sidebar collapse toggle and persists that display preference locally.
