@@ -12,4 +12,5 @@
 - Original compiled assets remain untouched.
 - `layout-polish.css` contains all visual overrides.
 - `layout-polish.js` only adds the sidebar collapse toggle and persists that display preference locally.
+- Sidebar navigation icons are original SVG exports from Figma node `1459:347086`; expanded and collapsed layouts share the same assets.
 - `index.html` only loads those two additive files.

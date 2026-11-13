@@ -23,6 +23,53 @@
   transition: width 180ms ease, min-width 180ms ease;
 }
 
+.document-center-nav .nav-design-icon-shell {
+  display: inline-flex;
+  flex: 0 0 auto;
+  box-sizing: content-box;
+  width: 20px !important;
+  height: 20px !important;
+  padding: 7px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.document-center-nav .nav-design-icon {
+  display: block;
+  max-width: 20px;
+  max-height: 20px;
+  object-fit: contain;
+}
+
+.document-center-nav-group.is-feixiang .nav-design-icon-shell {
+  background: #edf4ff;
+}
+
+.document-center-nav-group.is-feixiang .nav-design-icon {
+  filter: invert(44%) sepia(91%) saturate(2870%) hue-rotate(208deg) brightness(101%) contrast(101%);
+}
+
+.document-center-nav-group.is-school .nav-design-icon-shell {
+  background: #ebfaf6;
+}
+
+.document-center-nav-group.is-school .nav-design-icon {
+  filter: invert(73%) sepia(45%) saturate(666%) hue-rotate(117deg) brightness(89%) contrast(89%);
+}
+
+.document-center-nav-group.is-ai .nav-design-icon-shell {
+  background: #f0efff;
+}
+
+.document-center-nav-group.is-personal .nav-design-icon-shell {
+  background: #f7f8fa;
+}
+
+.document-center-nav-group.is-personal .nav-design-icon {
+  filter: invert(45%) sepia(8%) saturate(469%) hue-rotate(182deg) brightness(94%) contrast(91%);
+}
+
 /* AI search sits at the right end of the header, matching the supplied layout. */
 .global-resource-search.is-full-workspace.is-home-aligned {
   left: auto !important;
@@ -98,9 +145,22 @@
   white-space: normal !important;
 }
 
-.document-center.is-layout-collapsed .document-center-nav button svg {
+.document-center.is-layout-collapsed .document-center-nav button svg,
+.document-center.is-layout-collapsed .document-center-nav button .nav-design-icon-shell {
   flex: 0 0 auto;
   margin: 0 !important;
+}
+
+.document-center.is-layout-collapsed .document-center-nav button .nav-design-icon-shell {
+  width: 18px !important;
+  height: 18px !important;
+  padding: 4px;
+  border-radius: 9px;
+}
+
+.document-center.is-layout-collapsed .document-center-nav button .nav-design-icon {
+  max-width: 18px;
+  max-height: 18px;
 }
 
 .document-center.is-layout-collapsed .document-center-nav button span {

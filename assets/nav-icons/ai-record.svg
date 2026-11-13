@@ -1,0 +1,30 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="&#229;&#174;&#185;&#229;&#153;&#168; 18030" clip-path="url(#clip0_0_417)">
+<rect id="&#231;&#159;&#169;&#229;&#189;&#162; 12764" x="3.63281" y="3.63672" width="12.7273" height="12.7273" rx="2.5" fill="#4CC9FE"/>
+<path id="&#231;&#159;&#169;&#229;&#189;&#162; 12777" d="M14.093 1.81836H15.6839C17.0647 1.81836 18.1839 2.93765 18.1839 4.31836V5.90927M5.91122 18.182H4.32031C2.9396 18.182 1.82031 17.0627 1.82031 15.682V14.0911M5.91122 1.81836H4.32031C2.9396 1.81836 1.82031 2.93765 1.82031 4.31836V5.90927" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" stroke="#006DFF"/>
+<path id="Vector 2042" d="M1.8125 10L18.1764 10" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" stroke="#006DFF"/>
+<g id="Star 37">
+<use xlink:href="#stroke0_0_417" fill="url(#paint0_linear_0_417)"/>
+<use xlink:href="#stroke0_0_417" fill="url(#paint1_radial_0_417)"/>
+<mask id="stroke1_0_417" maskUnits="userSpaceOnUse" x="9" y="9" width="12" height="12" fill="black">
+<rect fill="white" x="9" y="9" width="12" height="12"/>
+<use xlink:href="#stroke0_0_417"/>
+</mask>
+<path d="M11.9246 14.2878L11.2673 14.5311C10.8319 14.6922 10.8319 15.3078 11.2673 15.4689L11.9246 15.7122C13.0195 16.1173 13.8827 16.9805 14.2878 18.0754L14.5311 18.7327C14.6922 19.1681 15.3078 19.1681 15.4689 18.7327L15.7122 18.0754C16.1173 16.9805 16.9805 16.1173 18.0754 15.7122L18.7327 15.4689C19.1681 15.3078 19.1681 14.6922 18.7327 14.5311L18.0754 14.2878C16.9805 13.8827 16.1173 13.0195 15.7122 11.9246L15.4689 11.2673C15.3078 10.8319 14.6922 10.8319 14.5311 11.2673L14.2878 11.9246C13.8827 13.0195 13.0195 13.8827 11.9246 14.2878Z" stroke-width="2" stroke="white" mask="url(#stroke1_0_417)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_417" x1="12.4206" y1="12.1157" x2="15.9391" y2="17.1421" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00E158"/>
+<stop offset="1" stop-color="#6AF36C"/>
+</linearGradient>
+<radialGradient id="paint1_radial_0_417" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(17.779 14.6338) scale(5.00999)">
+<stop stop-color="#78FAFF"/>
+<stop offset="1" stop-color="#78FAFF" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip0_0_417">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+<path id="stroke0_0_417" d="M14.5311 11.2673C14.6922 10.8319 15.3078 10.8319 15.4689 11.2673L15.7122 11.9246C16.1173 13.0195 16.9805 13.8827 18.0754 14.2878L18.7327 14.5311C19.1681 14.6922 19.1681 15.3078 18.7327 15.4689L18.0754 15.7122C16.9805 16.1173 16.1173 16.9805 15.7122 18.0754L15.4689 18.7327C15.3078 19.1681 14.6922 19.1681 14.5311 18.7327L14.2878 18.0754C13.8827 16.9805 13.0195 16.1173 11.9246 15.7122L11.2673 15.4689C10.8319 15.3078 10.8319 14.6922 11.2673 14.5311L11.9246 14.2878C13.0195 13.8827 13.8827 13.0195 14.2878 11.9246L14.5311 11.2673Z"/>
+</defs>
+</svg>

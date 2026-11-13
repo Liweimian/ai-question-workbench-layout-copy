@@ -1,10 +1,46 @@
 (function () {
   const stateKey = 'ai-question-sidebar-collapsed';
+  const iconByLabel = {
+    '按章节/知识点选题': 'chapter.svg',
+    '从同步练习选题': 'sync.svg',
+    '从练习册选题': 'workbook.svg',
+    '从专题练习选题': 'special.svg',
+    '从试卷选题': 'paper.svg',
+    '从区本题库选题': 'school.svg',
+    '从校本题库选题': 'school.svg',
+    '上传文件 AI 录题': 'ai-record.svg',
+    'AI 出题': 'ai-create.svg',
+    'AI 组题': 'ai-compose.svg',
+    '从我的资源选题': 'my-resources.svg',
+    '继续最近浏览': 'recent.svg'
+  };
+
+  function applyDesignIcons(sidebar) {
+    sidebar.querySelectorAll('.document-center-nav button').forEach(function (button) {
+      const label = (button.getAttribute('aria-label') || button.textContent || '').trim();
+      const asset = iconByLabel[label];
+      if (!asset || button.querySelector('.nav-design-icon')) return;
+      const oldIcon = button.querySelector('svg');
+      if (!oldIcon) return;
+      const icon = document.createElement('img');
+      icon.className = 'nav-design-icon';
+      icon.src = './assets/nav-icons/' + asset;
+      icon.alt = '';
+      icon.setAttribute('aria-hidden', 'true');
+      const shell = document.createElement('span');
+      shell.className = 'nav-design-icon-shell';
+      shell.setAttribute('aria-hidden', 'true');
+      shell.appendChild(icon);
+      oldIcon.replaceWith(shell);
+    });
+  }
 
   function mountToggle() {
     const center = document.querySelector('.document-center');
     const sidebar = center && center.querySelector('.document-center-sidebar');
-    if (!center || !sidebar || sidebar.querySelector('.layout-sidebar-toggle')) return;
+    if (!center || !sidebar) return;
+    applyDesignIcons(sidebar);
+    if (sidebar.querySelector('.layout-sidebar-toggle')) return;
 
     const collapsed = window.localStorage.getItem(stateKey) === 'true';
     center.classList.toggle('is-layout-collapsed', collapsed);
