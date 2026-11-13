@@ -42,32 +42,17 @@
   object-fit: contain;
 }
 
-.document-center-nav-group.is-feixiang .nav-design-icon-shell {
-  background: #edf4ff;
+.document-center-nav .nav-design-icon-shell {
+  background: transparent;
 }
 
-.document-center-nav-group.is-feixiang .nav-design-icon {
-  filter: invert(44%) sepia(91%) saturate(2870%) hue-rotate(208deg) brightness(101%) contrast(101%);
+.document-center-nav .nav-design-icon {
+  filter: grayscale(1);
 }
 
-.document-center-nav-group.is-school .nav-design-icon-shell {
-  background: #ebfaf6;
-}
-
-.document-center-nav-group.is-school .nav-design-icon {
-  filter: invert(73%) sepia(45%) saturate(666%) hue-rotate(117deg) brightness(89%) contrast(89%);
-}
-
-.document-center-nav-group.is-ai .nav-design-icon-shell {
-  background: #f0efff;
-}
-
-.document-center-nav-group.is-personal .nav-design-icon-shell {
-  background: #f7f8fa;
-}
-
-.document-center-nav-group.is-personal .nav-design-icon {
-  filter: invert(45%) sepia(8%) saturate(469%) hue-rotate(182deg) brightness(94%) contrast(91%);
+.document-center-nav button > svg {
+  color: var(--common_level1_base_color) !important;
+  filter: grayscale(1);
 }
 
 /* AI search sits at the right end of the header, matching the supplied layout. */
