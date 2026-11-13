@@ -1,0 +1,15 @@
+# AGENT HANDOFF
+
+## Current request
+
+- Work only in this copied static site; never modify the original published link.
+- Preserve all product text, mock data, and existing product interactions.
+- Layout-only changes: add the supplied pale background treatment, place AI search at the right of the header, and add a compact left navigation state matching the reference.
+- Publish this copy as a new GitHub repository and return a new link.
+
+## Implementation boundary
+
+- Original compiled assets remain untouched.
+- `layout-polish.css` contains all visual overrides.
+- `layout-polish.js` only adds the sidebar collapse toggle and persists that display preference locally.
+- `index.html` only loads those two additive files.

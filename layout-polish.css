@@ -1,0 +1,112 @@
+/* Layout-only refinements requested for this copied prototype. */
+:root {
+  --layout-tint-start: #f4fbff;
+  --layout-tint-end: #e8f9fb;
+  --layout-canvas: #f3f5f8;
+  --layout-rail-width: 68px;
+}
+
+.workbench-page,
+.workspace-shell,
+.document-center-main,
+.document-center-draft {
+  background: var(--layout-canvas) !important;
+}
+
+.add-workspace-topbar {
+  background: linear-gradient(90deg, var(--layout-tint-start), var(--layout-tint-end)) !important;
+}
+
+.document-center-sidebar {
+  position: relative;
+  background: linear-gradient(180deg, var(--layout-tint-start), var(--layout-tint-end)) !important;
+  transition: width 180ms ease, min-width 180ms ease;
+}
+
+/* AI search sits at the right end of the header, matching the supplied layout. */
+.global-resource-search.is-full-workspace.is-home-aligned {
+  left: auto !important;
+  right: 20px !important;
+  width: min(314px, calc(100vw - 420px)) !important;
+}
+
+.global-resource-search-bar {
+  background: rgba(255, 255, 255, .92) !important;
+}
+
+.layout-sidebar-toggle {
+  position: absolute;
+  z-index: 4;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--common_level1_base_color);
+  background: rgba(255, 255, 255, .76);
+  border: 1px solid var(--common_line_color1);
+  border-radius: var(--system-border-radius-m, 8px);
+  cursor: pointer;
+}
+
+.layout-sidebar-toggle:hover {
+  color: var(--theme_primary1_color);
+  background: var(--common_fg_color);
+}
+
+.document-center.is-layout-collapsed {
+  grid-template-columns: var(--layout-rail-width) minmax(0, 1fr) !important;
+}
+
+.document-center.is-layout-collapsed .document-center-sidebar {
+  width: var(--layout-rail-width) !important;
+  min-width: var(--layout-rail-width) !important;
+}
+
+.document-center.is-layout-collapsed .document-center-nav {
+  padding: 48px 6px 12px !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.document-center.is-layout-collapsed .document-center-nav-title {
+  display: none !important;
+}
+
+.document-center.is-layout-collapsed .document-center-nav-group {
+  padding: 6px 0 !important;
+}
+
+.document-center.is-layout-collapsed .document-center-nav-group + .document-center-nav-group::before {
+  left: 4px !important;
+  right: 4px !important;
+}
+
+.document-center.is-layout-collapsed .document-center-nav button {
+  width: 56px !important;
+  min-height: 50px !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  padding: 5px 2px !important;
+  font-size: 11px !important;
+  line-height: 14px !important;
+  text-align: center !important;
+  white-space: normal !important;
+}
+
+.document-center.is-layout-collapsed .document-center-nav button svg {
+  flex: 0 0 auto;
+  margin: 0 !important;
+}
+
+.document-center.is-layout-collapsed .document-center-nav button span {
+  display: -webkit-box !important;
+  max-width: 52px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
