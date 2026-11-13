@@ -15,4 +15,5 @@
 - Sidebar navigation icons are original SVG exports from Figma node `1459:347086`; expanded and collapsed layouts share the same assets.
 - Navigation icons intentionally keep the original monochrome Figma treatment: no colored backgrounds or category color filters.
 - Collapsed navigation uses a 112px rail so Chinese labels remain legible instead of being clipped at the former 68px width.
+- Collapsed navigation shows concise labels; expanding restores every original full label. Accessible names and hover titles remain the full wording.
 - `index.html` only loads those two additive files.

@@ -14,6 +14,33 @@
     '从我的资源选题': 'my-resources.svg',
     '继续最近浏览': 'recent.svg'
   };
+  const shortLabelByFullLabel = {
+    '按章节/知识点选题': '章节知识点',
+    '从同步练习选题': '同步',
+    '从练习册选题': '练习册',
+    '从专题练习选题': '专题',
+    '从试卷选题': '试卷',
+    '从区本题库选题': '区本',
+    '从校本题库选题': '校本',
+    '上传文件 AI 录题': 'AI录题',
+    'AI 出题': 'AI出题',
+    'AI 组题': 'AI组题',
+    'AI智搜': 'AI智搜',
+    '从我的资源选题': '我的资源',
+    '继续最近浏览': '最近浏览'
+  };
+
+  function applyCollapsedLabels(sidebar, collapsed) {
+    sidebar.querySelectorAll('.document-center-nav button').forEach(function (button) {
+      const fullLabel = button.dataset.fullLabel || (button.getAttribute('aria-label') || button.textContent || '').trim();
+      const label = button.querySelector(':scope > span:last-child');
+      if (!label || !shortLabelByFullLabel[fullLabel]) return;
+      button.dataset.fullLabel = fullLabel;
+      button.title = fullLabel;
+      const targetLabel = collapsed ? shortLabelByFullLabel[fullLabel] : fullLabel;
+      if (label.textContent !== targetLabel) label.textContent = targetLabel;
+    });
+  }
 
   function applyDesignIcons(sidebar) {
     sidebar.querySelectorAll('.document-center-nav button').forEach(function (button) {
@@ -40,10 +67,14 @@
     const sidebar = center && center.querySelector('.document-center-sidebar');
     if (!center || !sidebar) return;
     applyDesignIcons(sidebar);
-    if (sidebar.querySelector('.layout-sidebar-toggle')) return;
+    if (sidebar.querySelector('.layout-sidebar-toggle')) {
+      applyCollapsedLabels(sidebar, center.classList.contains('is-layout-collapsed'));
+      return;
+    }
 
     const collapsed = window.localStorage.getItem(stateKey) === 'true';
     center.classList.toggle('is-layout-collapsed', collapsed);
+    applyCollapsedLabels(sidebar, collapsed);
 
     const button = document.createElement('button');
     button.type = 'button';
@@ -61,6 +92,7 @@
     button.addEventListener('click', function () {
       const next = !center.classList.contains('is-layout-collapsed');
       center.classList.toggle('is-layout-collapsed', next);
+      applyCollapsedLabels(sidebar, next);
       window.localStorage.setItem(stateKey, String(next));
       button.setAttribute('aria-label', next ? '展开左侧导航' : '收起左侧导航');
       button.title = next ? '展开导航' : '收起导航';
