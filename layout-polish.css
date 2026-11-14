@@ -3,7 +3,7 @@
   --layout-tint-start: #f4fbff;
   --layout-tint-end: #e8f9fb;
   --layout-canvas: #f3f5f8;
-  --layout-rail-width: 112px;
+  --layout-rail-width: 72px;
 }
 
 .workbench-page,
@@ -11,6 +11,25 @@
 .document-center-main,
 .document-center-draft {
   background: var(--layout-canvas) !important;
+}
+
+/* Homepage canvas is one gray. The only other surface is the white sheet. */
+.workspace-shell.is-alternate-home,
+.workspace-shell.is-alternate-home .workbench-page,
+.document-center.is-embedded.is-layout-2,
+.document-center.is-embedded.is-layout-2 .document-center-main,
+.document-center.is-embedded.is-layout-2 .document-center-draft,
+.document-center.is-embedded.is-layout-2 .document-layout-two,
+.workspace-shell.is-alternate-home .document-center-draft .editor-scroll,
+.workspace-shell.is-alternate-home .document-center-draft .editor-scroll.is-empty,
+.workspace-shell.is-alternate-home .document-center-draft .editor-empty,
+.document-center-draft .editor-empty.has-action-rail,
+.document-center-draft .editor-document.has-action-rail,
+.document-center-draft .document-action-rail {
+  background-color: #eef0f3 !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .add-workspace-topbar {
@@ -50,6 +69,15 @@
   filter: grayscale(1);
 }
 
+.document-center-nav .nav-line-icon,
+.source-navigation-icon-button .nav-line-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: var(--common_level1_base_color);
+  filter: none;
+}
+
 .document-center-nav button > svg {
   color: var(--common_level1_base_color) !important;
   filter: grayscale(1);
@@ -66,12 +94,24 @@
   background: rgba(255, 255, 255, .92) !important;
 }
 
+.global-resource-search-submit {
+  display: none !important;
+}
+
+.global-resource-search-image {
+  width: 32px !important;
+  height: 32px !important;
+  color: var(--common_level1_base_color) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
 .layout-sidebar-toggle {
   position: absolute;
   z-index: 4;
-  top: 10px;
-  right: 10px;
-  display: inline-flex;
+  top: 8px;
+  right: 6px;
+  display: none;
   width: 28px;
   height: 28px;
   align-items: center;
@@ -96,12 +136,50 @@
 .document-center.is-layout-collapsed .document-center-sidebar {
   width: var(--layout-rail-width) !important;
   min-width: var(--layout-rail-width) !important;
+  max-width: var(--layout-rail-width) !important;
+  box-sizing: border-box !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  overflow: hidden !important;
+  border-right: 0 !important;
+}
+
+.document-center.is-layout-collapsed .layout-sidebar-toggle {
+  display: inline-flex;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+/* Collapsed: only the narrow left gutter (red box) uses sidebar blue; editor canvas stays gray. */
+.document-center.is-embedded.is-layout-2.is-layout-collapsed .document-center-main,
+.document-center.is-embedded.is-layout-2.is-layout-collapsed .document-center-draft,
+.document-center.is-layout-collapsed .document-center-draft .editor-scroll,
+.document-center.is-layout-collapsed .document-center-draft .editor-scroll.is-empty,
+.document-center.is-layout-collapsed .document-center-draft .editor-empty,
+.document-center.is-layout-collapsed .document-center-draft .editor-empty.has-action-rail,
+.document-center.is-layout-collapsed .document-center-draft .editor-document.has-action-rail,
+.document-center.is-layout-collapsed .document-center-draft .document-action-rail {
+  background: #eef0f3 !important;
+  box-shadow: none !important;
+}
+
+.document-center.is-embedded.is-layout-2.is-layout-collapsed .document-center-main {
+  padding: 0 26px 24px 0 !important;
+  background: #eef0f3 !important;
 }
 
 .document-center.is-layout-collapsed .document-center-nav {
-  padding: 48px 8px 12px !important;
+  padding: 40px 2px 8px !important;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.document-center.is-layout-collapsed .document-center-nav::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 .document-center.is-layout-collapsed .document-center-nav-title {
@@ -109,23 +187,35 @@
 }
 
 .document-center.is-layout-collapsed .document-center-nav-group {
-  padding: 6px 0 !important;
+  padding: 0 !important;
+}
+
+.document-center.is-layout-collapsed .document-center-nav-group + .document-center-nav-group {
+  margin-top: 8px !important;
+  padding-top: 8px !important;
 }
 
 .document-center.is-layout-collapsed .document-center-nav-group + .document-center-nav-group::before {
-  left: 4px !important;
-  right: 4px !important;
+  top: 0 !important;
+  left: 10px !important;
+  right: 10px !important;
+  width: auto !important;
+  transform: translateY(-50%);
 }
 
 .document-center.is-layout-collapsed .document-center-nav button {
-  width: 96px !important;
-  min-height: 66px !important;
+  width: 100% !important;
+  max-width: 68px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  min-height: 0 !important;
+  height: auto !important;
   flex-direction: column !important;
   justify-content: center !important;
-  gap: 3px !important;
-  padding: 6px 4px !important;
-  font-size: 12px !important;
-  line-height: 16px !important;
+  gap: 4px !important;
+  padding: 4px 2px 3px !important;
+  font-size: 11px !important;
+  line-height: 14px !important;
   text-align: center !important;
   white-space: normal !important;
 }
@@ -136,10 +226,16 @@
   margin: 0 !important;
 }
 
+.document-center.is-layout-collapsed .document-center-nav button > svg {
+  width: 22px !important;
+  height: 22px !important;
+  padding: 3px !important;
+}
+
 .document-center.is-layout-collapsed .document-center-nav button .nav-design-icon-shell {
   width: 18px !important;
   height: 18px !important;
-  padding: 4px;
+  padding: 2px;
   border-radius: 9px;
 }
 
@@ -150,12 +246,123 @@
 
 .document-center.is-layout-collapsed .document-center-nav button span {
   display: -webkit-box !important;
-  width: 92px;
-  max-width: 92px;
-  min-height: 32px;
+  width: 100%;
+  max-width: 64px;
+  min-height: 0 !important;
+  height: auto !important;
+  margin-top: 0 !important;
   overflow: hidden;
   white-space: normal !important;
   word-break: break-all;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+/* Entering a source keeps the same collapsed rail: blue, 88px, icon above label. */
+.source-navigation-rail,
+.source-navigation-hover-panel,
+.source-navigation-transition {
+  width: var(--layout-rail-width) !important;
+  border-right: 0 !important;
+  background: linear-gradient(180deg, var(--layout-tint-start), var(--layout-tint-end)) !important;
+}
+
+.source-navigation-rail {
+  top: 0 !important;
+  bottom: 0 !important;
+  z-index: 46 !important;
+}
+
+.add-workspace:has(.source-navigation-rail) .add-workspace-topbar {
+  margin-left: var(--layout-rail-width) !important;
+  width: calc(100% - var(--layout-rail-width)) !important;
+  background: #fff !important;
+}
+
+.source-navigation-hover-panel,
+.source-navigation-transition {
+  width: 248px !important;
+}
+
+.source-navigation-hover-panel .document-center-nav,
+.source-navigation-transition .document-center-nav {
+  background: transparent !important;
+}
+
+.source-navigation-expand-control {
+  margin: 8px auto 4px !important;
+}
+
+.source-navigation-icon-nav {
+  padding: 4px 4px 8px !important;
+}
+
+.source-navigation-icon-button {
+  width: 100% !important;
+  max-width: 68px !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: 4px 2px 3px !important;
+  grid-template-rows: auto auto !important;
+  gap: 4px !important;
+  border-radius: 8px !important;
+  color: var(--common_level1_base_color) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.source-navigation-icon-button .nav-design-icon-shell {
+  display: inline-flex;
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.source-navigation-icon-button .nav-design-icon {
+  display: block;
+  max-width: 20px;
+  max-height: 20px;
+  object-fit: contain;
+  filter: grayscale(1);
+}
+
+.source-navigation-icon-button.is-active .nav-design-icon {
+  filter: none;
+}
+
+.source-navigation-short-label {
+  max-width: 64px !important;
+  color: var(--common_level1_base_color) !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 13px !important;
+}
+
+.source-navigation-icon-button.is-active {
+  color: var(--theme_primary1_color, #2f6bff) !important;
+  background: rgba(255, 255, 255, .72) !important;
+  box-shadow: none !important;
+}
+
+.source-navigation-icon-button.is-active .source-navigation-short-icon,
+.source-navigation-icon-button.is-active .source-navigation-short-label {
+  color: var(--theme_primary1_color, #2f6bff) !important;
+  filter: none;
+}
+
+/* Short laptop screens: compress icon/text stack further. */
+@media (max-height: 860px) {
+  .document-center.is-layout-collapsed .document-center-nav {
+    padding-top: 38px !important;
+  }
+
+  .document-center.is-layout-collapsed .document-center-nav button {
+    gap: 3px !important;
+    padding: 2px !important;
+    font-size: 11px !important;
+    line-height: 13px !important;
+  }
 }
