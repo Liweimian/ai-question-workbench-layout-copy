@@ -150,15 +150,50 @@
     });
   }
 
+  function returnToWorkbenchHome() {
+    const home = document.querySelector('.add-workspace-home');
+    if (home) home.click();
+  }
+
+  function polishTopbar() {
+    const topbar = document.querySelector('.add-workspace-topbar');
+    if (!topbar) return;
+    const brand = topbar.querySelector('.add-workspace-brand');
+    if (brand && !brand.querySelector('.layout-topbar-back')) {
+      const back = document.createElement('button');
+      back.type = 'button';
+      back.className = 'layout-topbar-back';
+      back.setAttribute('aria-label', '返回');
+      back.title = '返回';
+      back.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>';
+      back.addEventListener('click', returnToWorkbenchHome);
+      brand.prepend(back);
+    }
+    if (!topbar.querySelector('.layout-project-crumb')) {
+      const crumb = document.createElement('nav');
+      crumb.className = 'layout-project-crumb';
+      crumb.setAttribute('aria-label', '当前位置');
+      crumb.innerHTML = '<span class="layout-product-home">首页</span><span class="layout-crumb-sep" aria-hidden="true">›</span><button type="button" class="layout-workbench-home">组题工作台</button>';
+      crumb.querySelector('.layout-workbench-home').addEventListener('click', returnToWorkbenchHome);
+      if (brand) brand.append(crumb);
+      else topbar.prepend(crumb);
+    }
+    const existing = topbar.querySelector('.layout-project-crumb');
+    if (brand && existing && existing.parentElement !== brand) brand.append(existing);
+  }
+
   const observer = new MutationObserver(function () {
     mountToggle();
     polishSearchBar();
+    polishTopbar();
   });
   observer.observe(document.documentElement, { childList: true, subtree: true });
   document.addEventListener('DOMContentLoaded', function () {
     mountToggle();
     polishSearchBar();
+    polishTopbar();
   });
   mountToggle();
   polishSearchBar();
+  polishTopbar();
 })();

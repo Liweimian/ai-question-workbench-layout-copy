@@ -33,7 +33,111 @@
 }
 
 .add-workspace-topbar {
+  height: 42px !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
   background: linear-gradient(90deg, var(--layout-tint-start), var(--layout-tint-end)) !important;
+}
+
+.add-workspace-topbar .feixiang-ai-library-logo,
+.add-workspace-topbar .add-workspace-home {
+  display: none !important;
+}
+
+.layout-topbar-back {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--common_level1_base_color);
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.layout-topbar-back:hover {
+  background: var(--common_fg2_color, #f7f8fa);
+}
+
+.add-workspace-topbar > .add-workspace-brand {
+  display: flex !important;
+  width: auto !important;
+  height: 42px !important;
+  flex: 0 0 auto !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  gap: 2px;
+}
+
+.add-workspace-brand::after {
+  content: none !important;
+}
+
+.add-workspace-subject {
+  position: relative;
+}
+
+.document-center.is-layout-collapsed .add-workspace-subject,
+.add-workspace:has(.source-navigation-rail) .add-workspace-subject {
+  display: none !important;
+}
+
+.document-center.is-layout-collapsed .layout-project-crumb::before,
+.add-workspace:has(.source-navigation-rail) .layout-project-crumb::before {
+  content: none;
+}
+
+.add-workspace-subject::after {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--common_level2_base_color, #6b6f78);
+  border-bottom: 1.5px solid var(--common_level2_base_color, #6b6f78);
+  content: '';
+  pointer-events: none;
+  transform: translateY(-70%) rotate(45deg);
+}
+
+.layout-project-crumb {
+  display: inline-flex;
+  margin-left: 10px;
+  align-items: center;
+  gap: 8px;
+  color: var(--common_level2_base_color, #6b6f78);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.layout-project-crumb::before {
+  content: '';
+  width: 1px;
+  height: 14px;
+  margin-right: 4px;
+  background: var(--common_line_color2, #dcdddf);
+}
+
+.layout-product-home {
+  color: var(--common_level2_base_color, #6b6f78);
+}
+
+.layout-crumb-sep {
+  color: var(--common_level3_base_color, #92959c);
+}
+
+.layout-workbench-home {
+  padding: 0;
+  color: var(--common_level1_base_color);
+  font: inherit;
+  font-weight: 600;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
 .document-center-sidebar {
