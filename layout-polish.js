@@ -182,18 +182,56 @@
     if (brand && existing && existing.parentElement !== brand) brand.append(existing);
   }
 
+  function polishRailSubject() {
+    const source = document.querySelector('.add-workspace-subject select');
+    if (!source) return;
+    document.querySelectorAll('.source-navigation-hover-panel, .source-navigation-transition').forEach(function (panel) {
+      let row = panel.querySelector('.layout-rail-subject-row');
+      if (!row) {
+        row = document.createElement('div');
+        row.className = 'layout-rail-subject-row';
+        const title = panel.querySelector('.document-center-nav-title');
+        if (title) title.before(row);
+        else panel.prepend(row);
+      }
+      const stray = panel.querySelector('.layout-rail-subject');
+      if (stray && stray.parentElement !== row) row.prepend(stray);
+      let host = row.querySelector('.layout-rail-subject');
+      if (!host) {
+        host = document.createElement('label');
+        host.className = 'layout-rail-subject';
+        const select = source.cloneNode(true);
+        select.setAttribute('aria-label', '学段科目');
+        select.addEventListener('change', function () {
+          if (source.value === select.value) return;
+          source.value = select.value;
+          source.dispatchEvent(new Event('change', { bubbles: true }));
+        });
+        host.appendChild(select);
+        row.prepend(host);
+      }
+      const collapse = panel.querySelector('.source-navigation-collapse-control');
+      if (collapse && collapse.parentElement !== row) row.appendChild(collapse);
+      const select = host.querySelector('select');
+      if (select && select.value !== source.value) select.value = source.value;
+    });
+  }
+
   const observer = new MutationObserver(function () {
     mountToggle();
     polishSearchBar();
     polishTopbar();
+    polishRailSubject();
   });
   observer.observe(document.documentElement, { childList: true, subtree: true });
   document.addEventListener('DOMContentLoaded', function () {
     mountToggle();
     polishSearchBar();
     polishTopbar();
+    polishRailSubject();
   });
   mountToggle();
   polishSearchBar();
   polishTopbar();
+  polishRailSubject();
 })();

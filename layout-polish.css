@@ -362,6 +362,47 @@
   -webkit-line-clamp: 2;
 }
 
+.layout-rail-subject-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 10px 16px;
+}
+
+.layout-rail-subject {
+  position: relative;
+  display: inline-flex;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.layout-rail-subject select {
+  width: 112px;
+  height: 32px;
+  padding: 0 26px 0 12px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--common_level1_base_color);
+  background-color: rgba(255, 255, 255, .78);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.2 6 7.8 9.5 4.2' fill='none' stroke='%236B6F78' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.layout-rail-subject-row .source-navigation-collapse-control {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  margin: 0 !important;
+  flex: 0 0 32px;
+}
+
 /* Entering a source keeps the same collapsed rail: blue, 88px, icon above label. */
 .source-navigation-rail,
 .source-navigation-hover-panel,
