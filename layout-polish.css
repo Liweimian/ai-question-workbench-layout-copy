@@ -142,29 +142,54 @@
 
 .document-center-sidebar {
   position: relative;
-  background: linear-gradient(180deg, var(--layout-tint-start), var(--layout-tint-end)) !important;
+  background:
+    radial-gradient(ellipse at 35% 100%, rgba(153, 255, 180, .72) 0, rgba(255, 255, 255, 0) 48%),
+    linear-gradient(180deg, #f5ffff 0%, #e6fcff 46%, #ddf5f7 100%) !important;
   transition: width 180ms ease, min-width 180ms ease;
 }
 
 /* Expanded navigation: group the existing entry sets into the supplied soft cards. */
+.document-center:not(.is-layout-collapsed) {
+  grid-template-columns: 258px minmax(0, 1fr) !important;
+}
+
+.document-center:not(.is-layout-collapsed) .document-center-sidebar {
+  width: 258px !important;
+  min-width: 258px !important;
+  max-width: 258px !important;
+}
+
 .document-center:not(.is-layout-collapsed) .document-center-nav {
-  padding-right: 12px !important;
-  padding-left: 12px !important;
+  padding-right: 24px !important;
+  padding-left: 24px !important;
 }
 
 .document-center:not(.is-layout-collapsed) .document-center-nav-title {
-  margin: 0 4px 12px !important;
-  color: var(--common_level2_base_color, #6b6f78) !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+  width: 210px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  margin: 0 0 4px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 8px !important;
+  color: #232933 !important;
   font-size: 14px !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
+  background: linear-gradient(110.44deg, #d0f6fa 1.77%, #cffee1 171.03%) !important;
+  border: 1px solid #fff !important;
+  border-radius: 16px 16px 4px 4px !important;
 }
 
 .document-center:not(.is-layout-collapsed) .document-center-nav-group {
-  margin: 0 0 10px !important;
+  box-sizing: border-box !important;
+  width: 210px !important;
+  margin: 0 0 4px !important;
   padding: 10px 8px !important;
-  background: rgba(255, 255, 255, .58) !important;
-  border: 1px solid rgba(255, 255, 255, .9) !important;
-  border-radius: 16px !important;
+  background: rgba(245, 253, 253, .6) !important;
+  border: 1px solid #fff !important;
+  border-radius: 6px !important;
 }
 
 .document-center:not(.is-layout-collapsed) .document-center-nav-group + .document-center-nav-group {
@@ -173,6 +198,17 @@
 
 .document-center:not(.is-layout-collapsed) .document-center-nav-group + .document-center-nav-group::before {
   display: none !important;
+}
+
+.document-center:not(.is-layout-collapsed) .document-center-nav-group button {
+  width: 100% !important;
+  min-height: 40px !important;
+  gap: 6px !important;
+  padding: 10px !important;
+  color: #232933 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
 }
 
 .document-center-nav .nav-design-icon-shell {
