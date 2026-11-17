@@ -21,4 +21,5 @@
 - Expanded sidebar now follows Figma node `2013:137454`: 258px total width, a 210px navigation column with 24px side gutters, `rgba(245,253,253,.6)` group fills, white 1px borders, and 6px group radii. Collapsed sizing remains unchanged.
 - Per the latest review, the expanded navigation title is transparent (no fill or border), and navigation rows are tightened to 36px with no extra row gap. The sidebar width and grouped card treatment remain unchanged.
 - The expanded navigation title is plain left-aligned secondary text (`#6b6f78`, 14px/22px, regular) with 12px spacing before the first card; it must not be centered or styled as a title bar.
+- The sidebar already supplies 14px outer padding, so expanded `.document-center-nav` uses 10px horizontal padding to produce equal 24px left/right gutters around its 210px cards. Horizontal overflow and visible scrollbars are suppressed while scrolling remains available.
 - `index.html` only loads those two additive files.

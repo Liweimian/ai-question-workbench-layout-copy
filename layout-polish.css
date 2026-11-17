@@ -160,8 +160,16 @@
 }
 
 .document-center:not(.is-layout-collapsed) .document-center-nav {
-  padding-right: 24px !important;
-  padding-left: 24px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+  overflow-x: hidden !important;
+  scrollbar-width: none;
+}
+
+.document-center:not(.is-layout-collapsed) .document-center-nav::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .document-center:not(.is-layout-collapsed) .document-center-nav-title {
