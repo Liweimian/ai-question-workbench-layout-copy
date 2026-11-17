@@ -146,6 +146,35 @@
   transition: width 180ms ease, min-width 180ms ease;
 }
 
+/* Expanded navigation: group the existing entry sets into the supplied soft cards. */
+.document-center:not(.is-layout-collapsed) .document-center-nav {
+  padding-right: 12px !important;
+  padding-left: 12px !important;
+}
+
+.document-center:not(.is-layout-collapsed) .document-center-nav-title {
+  margin: 0 4px 12px !important;
+  color: var(--common_level2_base_color, #6b6f78) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.document-center:not(.is-layout-collapsed) .document-center-nav-group {
+  margin: 0 0 10px !important;
+  padding: 10px 8px !important;
+  background: rgba(255, 255, 255, .58) !important;
+  border: 1px solid rgba(255, 255, 255, .9) !important;
+  border-radius: 16px !important;
+}
+
+.document-center:not(.is-layout-collapsed) .document-center-nav-group + .document-center-nav-group {
+  margin-top: 0 !important;
+}
+
+.document-center:not(.is-layout-collapsed) .document-center-nav-group + .document-center-nav-group::before {
+  display: none !important;
+}
+
 .document-center-nav .nav-design-icon-shell {
   display: inline-flex;
   flex: 0 0 auto;

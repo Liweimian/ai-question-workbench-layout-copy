@@ -98,6 +98,10 @@
     const sourceRail = document.querySelector('.source-navigation-rail');
     if (sourceRail) applyDesignIcons(sourceRail);
     if (!center || !sidebar) return;
+    const navigationTitle = sidebar.querySelector('.document-center-nav-title');
+    if (navigationTitle && navigationTitle.textContent.trim() !== '从以下方式添加题目') {
+      navigationTitle.textContent = '从以下方式添加题目';
+    }
     applyDesignIcons(sidebar);
     if (sidebar.querySelector('.layout-sidebar-toggle')) {
       applyCollapsedLabels(sidebar, center.classList.contains('is-layout-collapsed'));
