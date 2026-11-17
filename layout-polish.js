@@ -190,6 +190,7 @@
     const source = document.querySelector('.add-workspace-subject select');
     if (!source) return;
     document.querySelectorAll('.source-navigation-hover-panel, .source-navigation-transition').forEach(function (panel) {
+      applyDesignIcons(panel);
       let row = panel.querySelector('.layout-rail-subject-row');
       if (!row) {
         row = document.createElement('div');
@@ -218,6 +219,10 @@
       if (collapse && collapse.parentElement !== row) row.appendChild(collapse);
       const select = host.querySelector('select');
       if (select && select.value !== source.value) select.value = source.value;
+      const title = panel.querySelector('.document-center-nav-title');
+      if (title && title.textContent.trim() !== '从以下方式添加题目') {
+        title.textContent = '从以下方式添加题目';
+      }
     });
   }
 

@@ -502,12 +502,86 @@
 
 .source-navigation-hover-panel,
 .source-navigation-transition {
-  width: 248px !important;
+  width: 258px !important;
+  background:
+    radial-gradient(ellipse at 35% 100%, rgba(153, 255, 180, .72) 0, rgba(255, 255, 255, 0) 48%),
+    linear-gradient(180deg, #f5ffff 0%, #e6fcff 46%, #ddf5f7 100%) !important;
 }
 
 .source-navigation-hover-panel .document-center-nav,
 .source-navigation-transition .document-center-nav {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  padding: 16px 8px 8px !important;
+  overflow-x: hidden !important;
   background: transparent !important;
+  scrollbar-width: none;
+}
+
+.source-navigation-hover-panel .document-center-nav::-webkit-scrollbar,
+.source-navigation-transition .document-center-nav::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.source-navigation-hover-panel .layout-rail-subject-row,
+.source-navigation-transition .layout-rail-subject-row {
+  width: 210px;
+  margin: 0 0 12px !important;
+}
+
+.source-navigation-hover-panel .document-center-nav-title,
+.source-navigation-transition .document-center-nav-title {
+  display: flex !important;
+  box-sizing: border-box !important;
+  width: 210px !important;
+  min-height: 0 !important;
+  margin: 0 0 12px !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+  color: #6b6f78 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 22px !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.source-navigation-hover-panel .document-center-nav-group,
+.source-navigation-transition .document-center-nav-group {
+  box-sizing: border-box !important;
+  width: 210px !important;
+  margin: 0 0 4px !important;
+  padding: 10px 8px !important;
+  row-gap: 0 !important;
+  background: rgba(245, 253, 253, .6) !important;
+  border: 1px solid #fff !important;
+  border-radius: 6px !important;
+}
+
+.source-navigation-hover-panel .document-center-nav-group + .document-center-nav-group,
+.source-navigation-transition .document-center-nav-group + .document-center-nav-group {
+  margin-top: 0 !important;
+}
+
+.source-navigation-hover-panel .document-center-nav-group + .document-center-nav-group::before,
+.source-navigation-transition .document-center-nav-group + .document-center-nav-group::before {
+  display: none !important;
+}
+
+.source-navigation-hover-panel .document-center-nav-group button,
+.source-navigation-transition .document-center-nav-group button {
+  width: 100% !important;
+  min-height: 36px !important;
+  height: 36px !important;
+  gap: 6px !important;
+  padding: 8px 10px !important;
+  color: #232933 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
 }
 
 .source-navigation-expand-control {

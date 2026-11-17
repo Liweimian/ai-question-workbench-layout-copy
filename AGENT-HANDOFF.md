@@ -22,4 +22,5 @@
 - Per the latest review, the expanded navigation title is transparent (no fill or border), and navigation rows are tightened to 36px with no extra row gap. The sidebar width and grouped card treatment remain unchanged.
 - The expanded navigation title is plain left-aligned secondary text (`#6b6f78`, 14px/22px, regular) with 12px spacing before the first card; it must not be centered or styled as a title bar.
 - The sidebar already supplies 14px outer padding, so expanded `.document-center-nav` uses 10px horizontal padding to produce equal 24px left/right gutters around its 210px cards. Horizontal overflow and visible scrollbars are suppressed while scrolling remains available.
+- The manually expanded source-navigation panel must visually match the home expanded sidebar: 258px total width, 24px gutters, 210px grouped cards, transparent left-aligned heading, compact rows, monochrome icons, and hidden scrollbars. Its only intentional additions are the retained subject/stage selector and current-source active state.
 - `index.html` only loads those two additive files.
