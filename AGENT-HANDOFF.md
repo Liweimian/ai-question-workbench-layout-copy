@@ -18,5 +18,6 @@
 - Collapsed navigation uses a 112px rail so Chinese labels remain legible instead of being clipped at the former 68px width.
 - Collapsed navigation shows concise labels; expanding restores every original full label. Accessible names and hover titles remain the full wording.
 - Expanded navigation title is “从以下方式添加题目”; its four existing entry groups use separate translucent white rounded cards. The collapsed rail intentionally keeps its current unboxed compact treatment.
-- Expanded sidebar now follows Figma node `2013:137454`: 258px total width, a 210px navigation column with 24px side gutters, `rgba(245,253,253,.6)` group fills, white 1px borders, 6px group radii, and the cyan-green title treatment. Collapsed sizing remains unchanged.
+- Expanded sidebar now follows Figma node `2013:137454`: 258px total width, a 210px navigation column with 24px side gutters, `rgba(245,253,253,.6)` group fills, white 1px borders, and 6px group radii. Collapsed sizing remains unchanged.
+- Per the latest review, the expanded navigation title is transparent (no fill or border), and navigation rows are tightened to 36px with no extra row gap. The sidebar width and grouped card treatment remain unchanged.
 - `index.html` only loads those two additive files.
